@@ -20,16 +20,44 @@ Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati in
 
 const usersAuthorizedEmails = ["aldo@libero.it", "giovvani@gmail.com", "giacomo@gmail.com"]
 
-const userEmailInput = prompt("Inserisci qui la tua email")
+const userEmailPrompt = prompt("Inserisci qui la tua email")
 
 // Validazione email con alert  
 
-  for(i = 0 ; i < usersAuthorizedEmails.length; i++){
+   for(i = 0 ; i < usersAuthorizedEmails.length; i++){
       const usersAuthorizedEmail = usersAuthorizedEmails[i];
-      if(userEmailInput == usersAuthorizedEmail){
+      if(userEmailPrompt == usersAuthorizedEmail){
           alert("Utente Autorizzato")
       } else {
           alert("Utente non Autorizzato")
       }break 
 
-  }
+  } 
+
+  
+///// !!!!! HERE BONUS  !!!!! //////
+
+const userEmailInput = document.getElementById('emailId');
+const userInputButton = document.getElementById('submitId');
+const resultAccess = document.querySelector('.result_access');
+const resultGame = document.querySelector('.result_game');
+
+
+
+// Validazione email co risultato a schermo 
+
+
+
+  // Gioco dei Dadi 
+  // Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+ const userNumberRnd = parseInt(Math.random()*6) + 1;
+ const computerNumberRnd = parseInt(Math.random()*6) + 1;
+
+ // Stabilire il vincitore, in base a chi fa il punteggio più alto.
+
+ if (userNumberRnd < computerNumberRnd) {
+     console.log("Vince il Pc");
+ } else if(userNumberRnd === computerNumberRnd){
+     console.log("Patta");
+ } else {
+    console.log("Bravo hai vinto!"); }
