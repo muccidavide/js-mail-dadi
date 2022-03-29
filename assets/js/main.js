@@ -19,7 +19,6 @@ Usiamo un input e un bottone per inserire la mail e poi mostriamo i risultati in
 */
 
 const usersAuthorizedEmails = ["aldo@libero.it", "giovvani@gmail.com", "giacomo@gmail.com"]
-
 const userEmailPrompt = prompt("Inserisci qui la tua email")
 
 // Validazione email con alert  
@@ -40,11 +39,27 @@ const userEmailPrompt = prompt("Inserisci qui la tua email")
 const userEmailInput = document.getElementById('emailId');
 const userInputButton = document.getElementById('submitId');
 const resultAccess = document.querySelector('.result_access');
-const resultGame = document.querySelector('.result_game');
 
+// Validazione email con risultato a schermo 
 
-
-// Validazione email co risultato a schermo 
+userInputButton.addEventListener('click', 
+function () {
+    for(i = 0 ; i < usersAuthorizedEmails.length; i++){
+        const usersAuthorizedEmail = usersAuthorizedEmails[i];
+        if(userEmailInput.value == usersAuthorizedEmail){
+            resultAccess.insertAdjacentHTML("beforeend", 
+            "Utente Autorizzato"
+            )
+        } else {
+            resultAccess.insertAdjacentHTML("beforeend", 
+            "Utente Non Autorizzato"
+            )
+        }break 
+    
+    } 
+}
+)
+   
 
 
 
